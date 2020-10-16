@@ -5,3 +5,25 @@
 
 <TextInput>
 	pos_hint: {"x":0.5, "top":18}
+
+<List>:
+    canvas:
+        Color:
+            rgba: 0.3, 0.3, 0.3, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    rv: rv
+    RecycleView:
+        id: rv
+        scroll_type: ['bars', 'content']
+        scroll_wheel_distance: sp(60) #スクロール速度
+        bar_width: sp(20)
+        viewclass: 'VariousButtons'
+        RecycleBoxLayout:
+            default_size: None, sp(160)
+            default_size_hint: 1, None
+            size_hint_y: None
+            height: self.minimum_height
+            orientation: 'vertical'
+            spacing: dp(8)
