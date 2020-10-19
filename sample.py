@@ -1,9 +1,8 @@
 import kivy
-kivy.require('1.0.5')
-
 from kivy.uix.floatlayout import FloatLayout
 from kivy.app import App
 from kivy.properties import ObjectProperty, StringProperty
+from kivy.lang import Builder
 
 
 class Controller(FloatLayout):
@@ -12,6 +11,9 @@ class Controller(FloatLayout):
     Add an action to be called from the kv lang file.
     '''
     label_wid = ObjectProperty()
+    a = [0,1,2,3]
+    for i in a:
+        
     info = StringProperty()
 
     def do_action(self):
@@ -22,6 +24,7 @@ class Controller(FloatLayout):
 class ControllerApp(App):
 
     def build(self):
+        Builder.load_file('./sample.kv')
         return Controller(info='Hello world')
 
 
